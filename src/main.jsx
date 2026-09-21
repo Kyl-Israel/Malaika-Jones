@@ -28,6 +28,31 @@ const routes = [
   { label: "Contact", path: "/contact" }
 ];
 
+const portfolioCategories = getPortfolioCategories(content);
+const portfolioItems = portfolioCategories.flatMap((category) => category.videos);
+
+function getPortfolioCategories(siteContent) {
+  const categories = Array.isArray(siteContent.categories) ? siteContent.categories : [];
+  const hasNestedVideos = categories.some((category) => Array.isArray(category.videos));
+
+  if (hasNestedVideos) {
+    return categories.map((category) => ({
+      ...category,
+      videos: (category.videos || []).map((item) => ({
+        ...item,
+        category: category.name
+      }))
+    }));
+  }
+
+  const legacyPortfolio = Array.isArray(siteContent.portfolio) ? siteContent.portfolio : [];
+
+  return categories.map((category) => ({
+    ...category,
+    videos: legacyPortfolio.filter((item) => item.category === category.name)
+  }));
+}
+
 function useRoute() {
   const [path, setPath] = useState(() => window.location.pathname);
 
@@ -355,7 +380,7 @@ function Header({ navigate, path, menuOpen, setMenuOpen }) {
 }
 
 function Home({ navigate, playerController }) {
-  const featured = content.portfolio.filter((item) => item.featured).slice(0, 3);
+  const featured = portfolioItems.filter((item) => item.featured).slice(0, 3);
 
   return (
     <>
@@ -425,9 +450,10 @@ function Home({ navigate, playerController }) {
 }
 
 function Portfolio({ playerController }) {
-  const filters = content.categories.map((category) => category.name);
+  const filters = portfolioCategories.map((category) => category.name);
   const [filter, setFilter] = useState(filters[0] || "");
-  const visibleItems = content.portfolio.filter((item) => item.category === filter);
+  const activeCategory = portfolioCategories.find((category) => category.name === filter);
+  const visibleItems = activeCategory?.videos || [];
 
   return (
     <PageHero

@@ -47,24 +47,22 @@ collections:
           - label: Categories
             name: categories
             widget: list
+            summary: "{{fields.name}}"
             fields:
               - { label: Name, name: name, widget: string }
               - { label: Description, name: description, widget: text }
-          - label: Portfolio
-            name: portfolio
-            widget: list
-            summary: "{{fields.title}}"
-            fields:
-              - { label: Title, name: title, widget: string }
-              - label: Category
-                name: category
-                widget: select
-                options: ["Beauty", "Hair", "Tech", "Life in Korea"]
-              - { label: Thumbnail, name: thumbnail, widget: image }
-              - { label: TikTok/YouTube Video or Social URL, name: url, widget: string, required: false }
-              - { label: Platform, name: platform, widget: string, required: false }
-              - { label: Featured, name: featured, widget: boolean, default: false }
-              - { label: Description, name: description, widget: text }
+              - label: Portfolio Videos
+                name: videos
+                widget: list
+                required: false
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Thumbnail, name: thumbnail, widget: image }
+                  - { label: TikTok/YouTube Video or Social URL, name: url, widget: string, required: false }
+                  - { label: Platform, name: platform, widget: string, required: false }
+                  - { label: Featured, name: featured, widget: boolean, default: false }
+                  - { label: Description, name: description, widget: text }
           - label: Brands
             name: brands
             widget: list
