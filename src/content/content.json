@@ -197,6 +197,10 @@
           "description": "A casual personal moment that keeps the Life in Korea category feeling human and current."
         }
       ]
+    },
+    {
+      "name": "Fashion",
+      "description": "This is a test only"
     }
   ],
   "brands": [
@@ -230,11 +234,6 @@
       "quote": "We really enjoyed working with Malaika on a video introducing a Korean skin clinic experience. The content was produced with a very high level of care and attention to detail. What stood out most was how smoothly she structured the story while keeping the clinic information clear, polished, informative, and authentic.",
       "author": "Seon Collective",
       "company": "Brand Partner"
-    },
-    {
-      "quote": "Hello this is a test!",
-      "author": "Kyl Israel Tusay",
-      "company": "Tusay inc."
     }
   ],
   "rates": {
@@ -287,5 +286,6 @@
         "detail": "Unedited campaign footage"
       }
     ]
-  }
+  },
+  "portfolio": []
 }
