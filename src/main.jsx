@@ -32,6 +32,20 @@ const portfolioCategories = getPortfolioCategories(content);
 const portfolioItems = portfolioCategories.flatMap((category) => category.videos);
 
 function getPortfolioCategories(siteContent) {
+  const portfolioCategorySource = Array.isArray(siteContent.portfolio?.categories)
+    ? siteContent.portfolio.categories
+    : null;
+
+  if (portfolioCategorySource) {
+    return portfolioCategorySource.map((category) => ({
+      ...category,
+      videos: (category.videos || []).map((item) => ({
+        ...item,
+        category: category.name
+      }))
+    }));
+  }
+
   const categories = Array.isArray(siteContent.categories) ? siteContent.categories : [];
   const hasNestedVideos = categories.some((category) => Array.isArray(category.videos));
 

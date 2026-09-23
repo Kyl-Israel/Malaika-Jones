@@ -1,7 +1,13 @@
 {
   "site": {
-    "portraitImage": "/uploads/portrait.jpg",
+    "name": "Malaika Jones",
+    "role": "UGC Creator, Model & Actress",
+    "location": "South Africa to South Korea",
+    "email": "malaika.jones30@gmail.com",
+    "intro": "I am a Korea-based South African content creator sharing authentic insights into daily life in South Korea from a global perspective. I create engaging, informative, and visually clean content that bridges Korean culture with international audiences.",
+    "bio": "From navigating daily life to maintaining curly hair, tech UGC, to beauty clinics and make-up tips, I document real experiences that resonate with foreigners, travelers, and globally curious audiences.",
     "heroImage": "/uploads/hero-landscape.jpg",
+    "portraitImage": "/uploads/portrait.jpg",
     "socials": [
       {
         "label": "Instagram",
@@ -15,13 +21,7 @@
         "label": "YouTube",
         "url": "https://youtube.com/@malaikajones4633?si=y9GrrO7Knrws2xky"
       }
-    ],
-    "bio": "From navigating daily life to maintaining curly hair, tech UGC, to beauty clinics and make-up tips, I document real experiences that resonate with foreigners, travelers, and globally curious audiences.",
-    "name": "Malaika Jones",
-    "intro": "I am a Korea-based South African content creator sharing authentic insights into daily life in South Korea from a global perspective. I create engaging, informative, and visually clean content that bridges Korean culture with international audiences.",
-    "location": "South Africa to South Korea",
-    "role": "UGC Creator, Model & Actress",
-    "email": "malaika.jones30@gmail.com"
+    ]
   },
   "stats": [
     {
@@ -37,11 +37,12 @@
       "label": "perspective I bring to your campaign"
     }
   ],
-  "categories": [
-    {
-      "name": "Beauty",
-      "description": "Skincare, makeup, beauty clinic, product explainers, and routine focused UGC with a clean social feel.",
-      "videos": [
+  "portfolio": {
+    "categories": [
+      {
+        "name": "Beauty",
+        "description": "Skincare, makeup, beauty clinic, product explainers, and routine focused UGC with a clean social feel.",
+        "videos": [
         {
           "title": "Korean Skin Clinic Story",
           "thumbnail": "/uploads/video-beauty-1.jpg",
@@ -197,12 +198,9 @@
           "description": "A casual personal moment that keeps the Life in Korea category feeling human and current."
         }
       ]
-    },
-    {
-      "name": "Fashion",
-      "description": "This is a test only"
-    }
-  ],
+      }
+    ]
+  },
   "brands": [
     {
       "name": "Seon Collective",
@@ -286,15 +284,5 @@
         "detail": "Unedited campaign footage"
       }
     ]
-  },
-  "portfolio": [
-    {
-      "featured": false,
-      "title": "Test only",
-      "category": "Hair",
-      "thumbnail": "/uploads/hero-landscape.jpg",
-      "url": "https://www.youtube.com/watch?v=_u5V6Knn9vA",
-      "description": "haha test only\n"
-    }
-  ]
+  }
 }
